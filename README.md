@@ -23,7 +23,7 @@ A new lesson extending the course's model-graded-eval material to *subjective* b
 
 ## Featured work
 
-### [grpo-reward-vs-eval](https://github.com/YOUR_USERNAME/grpo-reward-vs-eval) — auditing GRPO reward faithfulness
+### [grpo-reward-vs-eval](https://github.com/JulesRoussel2001/grpo-reward-vs-eval) — auditing GRPO reward faithfulness
 
 A reproducible testbed that **separates and audits** the three things RLVR pipelines usually fuse into one regex: the **reward** a model is trained against, the **metric** it's measured by, and the **extractor** that turns a completion into the answer feeding both. When they coincide — as in most public GRPO pipelines — "reward went up" and "the model improved" become true *by construction*. This pulls them apart on GSM8K (Qwen2.5-0.5B-Instruct, GRPO via TRL) and uses an independently-audited instrument to tell capability gains from proxy-gaming.
 
@@ -34,7 +34,7 @@ A reproducible testbed that **separates and audits** the three things RLVR pipel
 
 > Scope is stated plainly in the repo: single seed, single 0.5B model, GSM8K, 100 steps. The robust claims and the preliminary ones are labelled separately, and the README documents a hypothesis the data overturned and a circularity bug I found and fixed in my own design. This replicates and *packages* known results with an audited verifier; it doesn't claim them as new.
 
-### [llm-behavior-eval-harness](https://github.com/YOUR_USERNAME/llm-behavior-eval-harness) — evaluating subjective LLM behavior reproducibly
+### [llm-behavior-eval-harness](https://github.com/JulesRoussel2001/llm-behavior-eval-harness) — evaluating subjective LLM behavior reproducibly
 
 The methodology behind the Anthropic lesson, in full. An end-to-end pipeline that turns subjective tutor behavior into auditable signals: deterministic checks as cheap first gates, strict Pydantic schemas, a **frozen** Claude rubric judge validated against MRBench human annotations, class-aware zero-leakage splits, and a mini actor-critic prompt-optimization loop comparing baseline vs. optimized prompts on held-out examples. Includes a prompt-drift guard so the judge can't silently desync from its frozen prompt, and a pytest suite with mocked API behavior (no live calls in CI).
 
